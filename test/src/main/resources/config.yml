@@ -1,0 +1,27 @@
+http:
+  port: 18180
+  adminPort: 18280
+  gzip:
+    enabled: false
+
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: TRACE
+
+  # Logger-specific levels.
+  loggers:
+    "javax.management": WARN
+    "org.eclipse.jetty": WARN
+    "com.sun.jersey": WARN
+    "org.hibernate": WARN
+    
+    "Kompics": WARN
+    "com.yammer.dropwizard.config": INFO
+  console:
+      enabled: true
+
+  file:
+      enabled: true
+      currentLogFilename: "test.log"
+      archivedLogFilenamePattern: "test-%d{yyyy-mm-dd}.log.gz"
